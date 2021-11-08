@@ -10,11 +10,29 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/jichu",
+    name: "Jichu",
+    component: () => import("../views/Jichu.vue"),
+    children: [
+      {
+        path: "/jieshao", //以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+        name: "Jieshao",
+        component: () => import("../views/jichu/jieshao.vue"),
+      },
+      {
+        path: "/yingyong",
+        name: "Yingyong",
+        component: () => import("../views/jichu/yingyong.vue"),
+      },
+      {
+        path: "/muban",
+        name: "Muban",
+        component: () => import("../views/jichu/muban.vue"),
+      },
+    ],
   },
 ];
 
