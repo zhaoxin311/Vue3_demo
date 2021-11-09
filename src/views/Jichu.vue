@@ -6,6 +6,9 @@
     <router-link to="/jisuan">计算属性和侦听器</router-link> |
     <router-link to="/class">条件渲染</router-link> |
     <router-link to="/dataProperty">列表渲染</router-link> |
+    <router-link to="/shijian">事件处理</router-link> |
+    <router-link to="/biaodan">表单输入绑定</router-link> |
+    <router-link to="/zujian">组件基础</router-link> |
   </div>
   <router-view />
 </template>

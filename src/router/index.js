@@ -47,6 +47,21 @@ const routes = [
         name: "Muban",
         component: () => import("../views/jichu/muban.vue"),
       },
+      {
+        path: "/shijian",
+        name: "Shijian",
+        component: () => import("../views/jichu/shijian.vue"),
+      },
+      {
+        path: "/biaodan",
+        name: "Biaodan",
+        component: () => import("../views/jichu/biaodan.vue"),
+      },
+      {
+        path: "/zujian",
+        name: "Zujian",
+        component: () => import("../views/jichu/zujian.vue"),
+      },
     ],
   },
 ];
