@@ -28,6 +28,21 @@ const routes = [
         component: () => import("../views/jichu/yingyong.vue"),
       },
       {
+        path: "/dataProperty",
+        name: "DataProperty",
+        component: () => import("../views/jichu/dataProperty.vue"),
+      },
+      {
+        path: "/jisuan",
+        name: "Jisuan",
+        component: () => import("../views/jichu/jisuan.vue"),
+      },
+      {
+        path: "/class",
+        name: "Class",
+        component: () => import("../views/jichu/class.vue"),
+      },
+      {
         path: "/muban",
         name: "Muban",
         component: () => import("../views/jichu/muban.vue"),
