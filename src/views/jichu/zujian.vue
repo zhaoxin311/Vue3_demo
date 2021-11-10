@@ -13,20 +13,55 @@
     在父组件中进行输入：<input type="text" name="" id="" v-model="contact" />
     <p>在父组件中输入的内容为：{{ contact }}</p>
     <Zizujiantwo :contact="contact"></Zizujiantwo>
+    <hr />
+    <strong>控制文本字体大小</strong>
+    <p>{一共点击多少次} 是通过插槽分发内容</p>
+    <div :style="{ fontSize: postFontSize + 'em' }">
+      <Zizujianone
+        v-for="post in posts"
+        :key="post.id"
+        :title="post.title"
+        :number="number"
+        @enlargetextda="da"
+        @enlargetextxiao="xiao"
+        >一共点击{{ number }}次</Zizujianone
+      >
+      <hr />
+    </div>
   </div>
 </template>
 <script>
 import Zizujian from "./zizujian.vue";
 import Zizujiantwo from "./zizujiantwo.vue";
+import Zizujianone from "./zizujianone.vue";
 import { ref } from "vue";
 export default {
   name: "Zujian",
-  components: { Zizujian, Zizujiantwo },
+  components: { Zizujian, Zizujiantwo, Zizujianone },
   setup() {
     const contact = ref("");
+    const postFontSize = ref(1);
+    // const number = ref(0);
     return {
       contact,
+      posts: [
+        { id: 1, title: "My journey with Vue" },
+        { id: 2, title: "Blogging with Vue" },
+        { id: 3, title: "Why Vue is so fun" },
+      ],
+      postFontSize,
+      // number,
     };
+  },
+  methods: {
+    da(data) {
+      this.number = data;
+      this.postFontSize += 0.1;
+    },
+    xiao(data) {
+      this.number = data;
+      this.postFontSize -= 0.1;
+    },
   },
 };
 </script>
