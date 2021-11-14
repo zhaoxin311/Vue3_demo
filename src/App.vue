@@ -4,6 +4,7 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/jichu">基础</router-link> |
     <router-link to="/jichu">基础2</router-link> |
+    <router-link to="/jichu">基础2</router-link> |
   </div>
   <router-view />
 </template>
